@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1421" minimumToolsVersion="Xcode 4.1" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Book" representedClassName="Book" syncable="YES">
+        <attribute name="ageGroupRemoteId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="approvalStatus" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES">
+            <userInfo>
+                <entry key="0" value="Pending Approval"/>
+                <entry key="1" value="Approved"/>
+                <entry key="2" value="Rejected"/>
+            </userInfo>
+        </attribute>
+        <attribute name="backgroundColorCode" optional="YES" attributeType="String" defaultValueString="FFFFFF" syncable="YES"/>
+        <attribute name="bookSizeKB" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="calligraphyColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="calligraphyWidth" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="createDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="description1" optional="YES" attributeType="String" minValueString="0" maxValueString="250" syncable="YES"/>
+        <attribute name="description2" optional="YES" attributeType="String" minValueString="0" maxValueString="250" syncable="YES"/>
+        <attribute name="downloadDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isDownloaded" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isHidden" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isPublished" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="likeCount" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="penColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="penWidth" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rejectionComment" optional="YES" attributeType="String" minValueString="0" maxValueString="250" syncable="YES"/>
+        <attribute name="remoteId" optional="YES" attributeType="Integer 64" defaultValueString="-1" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="savedCalligraphyColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="savedPenColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="tagSummary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title1" optional="YES" attributeType="String" minValueString="0" maxValueString="250" syncable="YES"/>
+        <attribute name="title2" optional="YES" attributeType="String" minValueString="0" maxValueString="250" syncable="YES"/>
+        <attribute name="updateTimeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="author" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="book" inverseEntity="User" syncable="YES"/>
+        <relationship name="bookTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookTypes" inverseName="books" inverseEntity="BookTypes" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="book" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="flaggedBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="flaggedBooks" inverseEntity="User" syncable="YES"/>
+        <relationship name="likedBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="likedBooks" inverseEntity="User" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="BookPage" inverseName="book" inverseEntity="BookPage" syncable="YES"/>
+        <relationship name="primaryLanguage" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="primaryBook" inverseEntity="Language" syncable="YES"/>
+        <relationship name="secondaryLanguage" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="secondaryBook" inverseEntity="Language" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BookSearchTag" inverseName="book" inverseEntity="BookSearchTag" syncable="YES"/>
+        <relationship name="userGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserGroups" inverseName="books" inverseEntity="UserGroups" syncable="YES"/>
+    </entity>
+    <entity name="BookPage" representedClassName="BookPage" syncable="YES">
+        <attribute name="backgroundColorCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="calligraphyColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="calligraphyWidth" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="penColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="penWidth" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="remoteId" attributeType="Integer 64" defaultValueString="-1" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="savedCalligraphyColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="savedPenColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="sortOrder" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="text1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeStamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="videoCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="videoPathArray" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="book" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="pages" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="BookSearchTag" representedClassName="BookSearchTag" syncable="YES">
+        <attribute name="tag" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
+        <relationship name="book" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="tags" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="BookTypes" representedClassName="BookTypes" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Book" inverseName="bookTypes" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="flaggedByMe" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="likeCount" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="likedByMe" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="remoteId" attributeType="Integer 64" defaultValueString="-1" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <relationship name="author" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="comment" inverseEntity="User" syncable="YES"/>
+        <relationship name="book" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="comments" inverseEntity="Book" syncable="YES"/>
+        <relationship name="flaggedBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="flaggedComments" inverseEntity="User" syncable="YES"/>
+        <relationship name="likedBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="likedComments" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Language" representedClassName="Language" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" minValueString="0" maxValueString="20" syncable="YES"/>
+        <attribute name="nameEnglish" attributeType="String" minValueString="0" maxValueString="50" syncable="YES"/>
+        <attribute name="nameFrench" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <relationship name="primaryBook" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Book" inverseName="primaryLanguage" inverseEntity="Book" syncable="YES"/>
+        <relationship name="secondaryBook" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Book" inverseName="secondaryLanguage" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="backgroundColorCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isLoggedIn" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" minValueString="0" maxValueString="250" syncable="YES"/>
+        <attribute name="remoteId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="userName" attributeType="String" minValueString="0" maxValueString="50" indexed="YES" syncable="YES"/>
+        <attribute name="userTypeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="book" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Book" inverseName="author" inverseEntity="Book" syncable="YES"/>
+        <relationship name="comment" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="author" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="flaggedBooks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="flaggedBy" inverseEntity="Book" syncable="YES"/>
+        <relationship name="flaggedComments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="flaggedBy" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="likedBooks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="likedBy" inverseEntity="Book" syncable="YES"/>
+        <relationship name="likedComments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="likedBy" inverseEntity="Comment" syncable="YES"/>
+    </entity>
+    <entity name="UserGroups" representedClassName="UserGroups" syncable="YES">
+        <attribute name="name" attributeType="String" minValueString="0" maxValueString="250" syncable="YES"/>
+        <attribute name="remoteId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="userGroup" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Book" positionX="-108" positionY="-72" width="128" height="555"/>
+        <element name="BookPage" positionX="-308" positionY="18" width="128" height="270"/>
+        <element name="BookSearchTag" positionX="196" positionY="261" width="128" height="75"/>
+        <element name="BookTypes" positionX="-279" positionY="474" width="128" height="75"/>
+        <element name="Comment" positionX="-92" positionY="-330" width="128" height="195"/>
+        <element name="Language" positionX="-353" positionY="315" width="128" height="135"/>
+        <element name="User" positionX="117" positionY="-45" width="128" height="240"/>
+        <element name="UserGroups" positionX="178" positionY="405" width="128" height="90"/>
+    </elements>
+</model>

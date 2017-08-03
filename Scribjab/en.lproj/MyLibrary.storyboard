@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="GKK-vQ-bB9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+    </dependencies>
+    <scenes>
+        <!--My Library View Controller-->
+        <scene sceneID="0Z3-Rt-qge">
+            <objects>
+                <viewController storyboardIdentifier="My Library - My book and my favourite" id="GKK-vQ-bB9" customClass="MyLibraryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0qN-iG-P22">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="browse_bg.png" id="Ka7-nm-HPa" userLabel="Image View - background">
+                                <rect key="frame" x="-13" y="0.0" width="1037" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="dwY-Z1-Jft">
+                                <rect key="frame" x="0.0" y="-7" width="1024" height="721"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Books I like" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xIi-h3-pvX">
+                                        <rect key="frame" x="24" y="344" width="286" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="23"/>
+                                        <color key="textColor" red="0.085136944171869705" green="0.94387755102040816" blue="0.81013339735358214" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" id="RXz-jM-4Im" userLabel="Scroll View - mybook" customClass="BookScrollView">
+                                        <rect key="frame" x="231" y="40" width="790" height="289"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </scrollView>
+                                    <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" id="Jcz-Jc-jAZ" userLabel="Scroll View - group books" customClass="BookScrollView">
+                                        <rect key="frame" x="231" y="683" width="790" height="289"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </scrollView>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Books Found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kEf-de-JSZ" userLabel="Label - No Books Found for favour">
+                                        <rect key="frame" x="445" y="491" width="135" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" id="F89-Im-KPC" userLabel="Scroll View - favourite books" customClass="BookScrollView">
+                                        <rect key="frame" x="-5" y="367" width="1029" height="289"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="ghk-Gl-Rgb" userLabel="Gray Activity Indicator - delete book">
+                                                <rect key="frame" x="616" y="0.0" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                    </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oHk-7B-RaT" userLabel="Button - Create your story">
+                                        <rect key="frame" x="3" y="44" width="223" height="315"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                        <state key="normal" backgroundImage="library_create.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createButtonIsPressed:" destination="GKK-vQ-bB9" eventType="touchUpInside" id="4pv-JU-2bv"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Create a new story" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YNu-BR-APc" userLabel="Label - Create Book">
+                                        <rect key="frame" x="71" y="73" width="87" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="library_scroll.png" id="MoJ-kG-T62" userLabel="Image View - Group scroll bg image">
+                                        <rect key="frame" x="22" y="703" width="197" height="234"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" id="cY9-An-i1M" userLabel="Table View - My Group">
+                                        <rect key="frame" x="31" y="721" width="177" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Group cell" rowHeight="32" id="qx3-P2-r6T">
+                                                <rect key="frame" x="0.0" y="22" width="177" height="32"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                    </tableView>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Books Found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u3k-bw-6Wx" userLabel="Label - No Books Found for groups">
+                                        <rect key="frame" x="413" y="800" width="135" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Books" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ibu-6T-Tp5">
+                                        <rect key="frame" x="28" y="20" width="240" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="23"/>
+                                        <color key="textColor" red="0.085136944170000006" green="0.94387755100000004" blue="0.81013339740000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Group Books" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SJd-y1-XkC">
+                                        <rect key="frame" x="28" y="664" width="286" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="23"/>
+                                        <color key="textColor" red="0.085136944170000006" green="0.94387755100000004" blue="0.81013339740000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EFa-d7-9Qi" userLabel="Button - logout">
+                                <rect key="frame" x="750" y="710" width="77" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="library_menu_logout.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonIsPressed:" destination="GKK-vQ-bB9" eventType="touchUpInside" id="wJt-nv-mng"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JkA-wc-kXH" userLabel="Button - account">
+                                <rect key="frame" x="862" y="710" width="67" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="library_menu_account.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="accountButtonIsPressed:" destination="GKK-vQ-bB9" eventType="touchUpInside" id="R2o-bA-tKe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hxp-WY-RrY" userLabel="Button - logo">
+                                <rect key="frame" x="399" y="711" width="211" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoIsPressed:" destination="GKK-vQ-bB9" eventType="touchUpInside" id="5aG-8t-tG2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KHB-zf-jrD">
+                                <rect key="frame" x="69" y="714" width="60" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="menu_home.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoIsPressed:" destination="GKK-vQ-bB9" eventType="touchUpInside" id="p8W-93-ccf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="accountMenuButton" destination="JkA-wc-kXH" id="pBy-8H-cBh"/>
+                        <outlet property="createButton" destination="oHk-7B-RaT" id="CAp-tb-YXr"/>
+                        <outlet property="deleteActivity" destination="ghk-Gl-Rgb" id="55U-DB-Scw"/>
+                        <outlet property="groupImageView" destination="MoJ-kG-T62" id="LgT-KV-Len"/>
+                        <outlet property="logoutMenuButton" destination="EFa-d7-9Qi" id="Rab-Kx-YPO"/>
+                        <outlet property="myBookLabel" destination="ibu-6T-Tp5" id="QT5-wq-Tm6"/>
+                        <outlet property="myBooksScrollView" destination="RXz-jM-4Im" id="ZQD-ng-NRt"/>
+                        <outlet property="myFavouriteBooksScrollView" destination="F89-Im-KPC" id="zz9-jY-GsL"/>
+                        <outlet property="myGroupBooksScrollView" destination="Jcz-Jc-jAZ" id="Xx7-CR-psV"/>
+                        <outlet property="myGroupLabel" destination="SJd-y1-XkC" id="I0L-IY-Pma"/>
+                        <outlet property="noBookFavouriteLabel" destination="kEf-de-JSZ" id="0Xh-Ny-r8v"/>
+                        <outlet property="noBookGroupLabel" destination="u3k-bw-6Wx" id="dmN-hr-BKe"/>
+                        <outlet property="parentScrollView" destination="dwY-Z1-Jft" id="jSE-1A-8li"/>
+                        <outlet property="userGroupTableView" destination="cY9-An-i1M" id="1TM-QL-6wZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ca8-aV-VMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1258" y="-2174"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="browse_bg.png" width="1024" height="748"/>
+        <image name="library_create.png" width="223" height="315"/>
+        <image name="library_menu_account.png" width="67" height="56"/>
+        <image name="library_menu_logout.png" width="77" height="56"/>
+        <image name="library_scroll.png" width="250" height="325"/>
+        <image name="menu_home.png" width="57" height="48"/>
+    </resources>
+    <classes>
+        <class className="BookScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookScrollView.h"/>
+        </class>
+        <class className="MyLibraryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLibraryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="accountButtonIsPressed:"/>
+                <relationship kind="action" name="createButtonIsPressed:"/>
+                <relationship kind="action" name="logoutButtonIsPressed:"/>
+                <relationship kind="action" name="readButtonIsPressed:"/>
+                <relationship kind="outlet" name="accountMenuButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="createButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="deleteActivity" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="groupImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="logoutMenuButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="myBookLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myBooksScrollView" candidateClass="BookScrollView"/>
+                <relationship kind="outlet" name="myFavouriteBooksScrollView" candidateClass="BookScrollView"/>
+                <relationship kind="outlet" name="myGroupBooksScrollView" candidateClass="BookScrollView"/>
+                <relationship kind="outlet" name="myGroupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="noBookFavouriteLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="noBookGroupLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="parentScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="readButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="userGroupTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
